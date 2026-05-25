@@ -11,6 +11,9 @@ namespace Network
         
         [SerializeField]
         private PlayerInputHandler playerInputHandler;
+        
+        [SerializeField]
+        private PlayerSpawner playerSpawner;
 
         private async void Start()
         {
@@ -18,6 +21,7 @@ namespace Network
             networkRunner.ProvideInput = true;
             
             networkRunner.AddCallbacks(playerInputHandler);
+            networkRunner.AddCallbacks(playerSpawner);
             
             await networkRunner.StartGame(new StartGameArgs
             {
