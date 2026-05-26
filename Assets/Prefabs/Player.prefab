@@ -72,8 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5feb74bc5eee54aad86889ab67f051ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  controller: {fileID: 1277361247742320201}
-  speed: 10
+  speed: 3
 --- !u!114 &1277361247742320201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,7 +90,7 @@ MonoBehaviour:
   jumpImpulse: 8
   acceleration: 10
   braking: 10
-  maxSpeed: 2
+  maxSpeed: 5
   rotationSpeed: 15
 --- !u!114 &5809770673007483334
 MonoBehaviour:
@@ -105,7 +104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c3da9dfc407b45f9865d861cbd76519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  playerCamera: {fileID: 0}
 --- !u!136 &-2599011287538772957
 CapsuleCollider:
   m_ObjectHideFlags: 0

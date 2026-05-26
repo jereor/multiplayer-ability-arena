@@ -9,8 +9,8 @@ namespace Player
     {
         private NetworkCharacterController _controller;
         
-        [SerializeField, Range(0f, 10f)]
-        private float speed = 5f;
+        [SerializeField, Range(1f, 5f)]
+        private float speed = 3f;
 
         private void Awake()
         {
@@ -19,14 +19,12 @@ namespace Player
         
         public override void FixedUpdateNetwork()
         {
-            if (!HasInputAuthority)
-                return;
-            
             if (GetInput(out NetworkInputData input))
             {
-                var move = new Vector3(input.Move.x, 0, input.Move.y);
+                var moveDirection = new Vector3(input.Move.x, 0, input.Move.y);
+                moveDirection.Normalize();
 
-                _controller.Move(move.normalized * speed * Time.fixedDeltaTime);
+                _controller.Move(moveDirection * speed * Runner.DeltaTime);
             }
         }
     }
