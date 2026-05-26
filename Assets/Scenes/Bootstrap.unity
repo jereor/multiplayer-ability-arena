@@ -241,6 +241,7 @@ MonoBehaviour:
   networkRunnerPrefab: {fileID: 6455988993412349976, guid: b5666b92504f3471c9d1105c63cc99f8, type: 3}
   playerInputHandler: {fileID: 944731290}
   playerSpawner: {fileID: 487639503}
+  arenaSceneIndex: 1
 --- !u!4 &1996780453
 Transform:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using UnityEngine;
 using Fusion;
 using Player;
+using UnityEngine.SceneManagement;
 
 namespace Network
 {
@@ -14,6 +15,9 @@ namespace Network
         
         [SerializeField]
         private PlayerSpawner playerSpawner;
+
+        [SerializeField] 
+        private int arenaSceneIndex;
 
         private async void Start()
         {
@@ -29,6 +33,13 @@ namespace Network
                 SessionName = "TestRoom",
                 SceneManager = networkRunner.gameObject.AddComponent<NetworkSceneManagerDefault>()
             });
+            
+            if (networkRunner.IsServer)
+            {
+                await networkRunner.LoadScene(
+                    SceneRef.FromIndex(arenaSceneIndex)
+                );
+            }
         }
     }
 }
